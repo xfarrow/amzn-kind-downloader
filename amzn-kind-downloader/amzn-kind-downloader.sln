@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32526.322
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "amzn-kind-downloader", "amzn-kind-downloader\amzn-kind-downloader.csproj", "{153E2180-896E-4172-A5E1-CE0CC81AE186}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{153E2180-896E-4172-A5E1-CE0CC81AE186}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{153E2180-896E-4172-A5E1-CE0CC81AE186}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{153E2180-896E-4172-A5E1-CE0CC81AE186}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{153E2180-896E-4172-A5E1-CE0CC81AE186}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {11D4089D-D840-41D0-B0B3-81E6BA8C9B86}
+	EndGlobalSection
+EndGlobal
