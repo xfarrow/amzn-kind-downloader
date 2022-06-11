@@ -8,7 +8,7 @@ It takes automatic screenshots of the book and merges them into a single PDF fil
 It seems very difficult to directly retrieve text from the website; it's not HTML nor JS generated. 
 
 ## Video tutorial
-[Video Tutorial]([linkurl](https://www.youtube.com/watch?v=LH4JFvwnJbk))
+[Video Tutorial](https://www.youtube.com/watch?v=LH4JFvwnJbk)
 
 ## Note
 This software is provided as is and neither the author (or authors) nor GitHub, Inc. are responsable or encourage misconduct, copyright violations and piracy.
