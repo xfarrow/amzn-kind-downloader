@@ -7,9 +7,12 @@ It takes automatic screenshots of the book and merges them into a single PDF fil
 
 It seems very difficult to directly retrieve text from the website; it's not HTML nor JS generated. 
 
+## Video tutorial
+coming soon
+
 ## Note
 This software is provided as is and neither the author (or authors) nor GitHub, Inc. are responsable or encourage misconduct, copyright violations and piracy.
-The software does not contain any hardwired string referencing any website because you should run it only on websites you own or you have the authorization to access.
+The software does not contain any hardwired strings referencing any websites because you should run it only on websites you own or you have the authorization to access.
 
 The acronym 'amzn' stands for 'athletic moms zumba noobs" of course.
 
