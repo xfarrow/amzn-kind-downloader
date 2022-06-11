@@ -1,5 +1,5 @@
 # amzn-kind(le)-downlaoder
-When you buy a book, may also it be digital, you should have all the rights to personally own that book. This software helps you to download purchased books from big A.
+When you buy a book, may also it be digital, you should have all the rights to personally own that book. This software helps you download purchased books from big A.
 
 
 ## How it works
