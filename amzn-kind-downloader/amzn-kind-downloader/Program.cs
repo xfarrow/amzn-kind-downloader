@@ -17,7 +17,6 @@ namespace amzn_kind_downloader
 
         public static void StartExecution(string booklink, string cookiespath, string savein)
         {
-
             var driver = new FirefoxDriver();
 
             // install a cookie editor for debugging purposes
@@ -141,8 +140,14 @@ namespace amzn_kind_downloader
             // remove cookie policy banner
             driver.ExecuteScript("document.getElementById('ion-overlay-1').remove();");
 
+            // somehow amz does not show the right button unless you stroke the left button first...
+            driver.FindElement(By.TagName("html")).SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
+            Thread.Sleep(7000);
+            driver.FindElement(By.XPath("html")).SendKeys(OpenQA.Selenium.Keys.ArrowRight);
+
             int pagecounter = 1;
             Screenshot screenshot;
+
 
             while (IsElementPresent(driver, By.XPath("//div[@class='chevron-container right']")))
             {
