@@ -22,25 +22,34 @@ namespace amzn_kind_downloader
             // install a cookie editor for debugging purposes
             //driver.InstallAddOnFromFile(@"cookie_editor-1.10.1.xpi");
 
-            /*
-             * The user will likely have cookies whose domain is 'subdomain.amzn.com', so we use a dummy link
-             * 'subdomain.amzn.com/dummylink' in order to be able to set all the cookies without any difficulties.
-             * 
-             * If we first navigated to 'booklink', we'd have been redirected to something like 'amzn.com' in which
-             * the cookies which have 'subdomain.amzn.com' would have been rejected. These cookies do not undermine
-             * the goal of this program, so it'd have been sufficiently just not to add these, but we chose the 1st strategy.
-             */
-            Uri uri = new(booklink);
-            string dummyLink = uri.Scheme + "://" + uri.Host + "/" + "dummylink404";
-
-            // navigate to URL
             try
             {
+                /*
+                * The user will likely have cookies whose domain is 'subdomain.amzn.com', so we use a dummy link
+                * 'subdomain.amzn.com/dummylink' in order to be able to set all the cookies without any difficulties.
+                * 
+                * If we first navigated to 'booklink', we'd have been redirected to something like 'amzn.com' in which
+                * the cookies which have 'subdomain.amzn.com' would have been rejected. These cookies do not undermine
+                * the goal of this program, so it'd have been sufficiently just not to add these, but we chose the 1st strategy.
+                */
+                Uri uri = new(booklink);
+                string dummyLink = uri.Scheme + "://" + uri.Host + "/" + "dummylink404";
+
+
+                // navigate to URL
                 driver.Navigate().GoToUrl(dummyLink);
             }
-            catch (OpenQA.Selenium.WebDriverArgumentException)
+            catch (System.UriFormatException)
             {
-                Console.WriteLine("Url is not valid.");
+                driver.Quit();
+                MessageBox.Show("Seems you did not provide a valid URL.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            catch (OpenQA.Selenium.WebDriverArgumentException exc)
+            {
+                driver.Quit();
+                MessageBox.Show(exc.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
             }
 
             driver.Manage().Cookies.DeleteAllCookies();
@@ -62,7 +71,7 @@ namespace amzn_kind_downloader
 
             ImagesToPdf(savein, title);
 
-            driver.Close();
+            driver.Quit();
 
         }
 
@@ -177,7 +186,7 @@ namespace amzn_kind_downloader
 
         private static string FindBookTitle(FirefoxDriver? driver)
         {
-            if(IsElementPresent(driver, By.XPath("//div[contains(@class, 'fixed-book-title')]")))
+            if (IsElementPresent(driver, By.XPath("//div[contains(@class, 'fixed-book-title')]")))
             {
                 return driver.FindElement(By.XPath("//div[contains(@class, 'fixed-book-title')]")).Text;
             }

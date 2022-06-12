@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IHH1UQdEMcydeSHcCe+y86Xi5mM3GUURsDbTvt9OGGo/iGalQweVhSOd/dKA630XkENpHaKF2FlmyI59fsBWaw==",
+  "dgSpecHash": "Ln1+Acg/5ti6mpBtC2gjnxvnaH/MvlxQQ9cRlgaIrdmcWvbDuyYLqI5kKFJVi2iXJfki6FpmuD1WC3/DpX9cTg==",
   "success": true,
-  "projectFilePath": "D:\\Lavoro\\fck-amzn\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
+  "projectFilePath": "D:\\Lavoro\\amzn-kind-downlaoder\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Alessandro\\.nuget\\packages\\aspose.words\\22.6.0\\aspose.words.22.6.0.nupkg.sha512",
     "C:\\Users\\Alessandro\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.0.4\\microsoft.dotnet.platformabstractions.2.0.4.nupkg.sha512",

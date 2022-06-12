@@ -5976,11 +5976,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Lavoro\\fck-amzn\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
+      "projectUniqueName": "D:\\Lavoro\\amzn-kind-downlaoder\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
       "projectName": "amzn-kind-downloader",
-      "projectPath": "D:\\Lavoro\\fck-amzn\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
+      "projectPath": "D:\\Lavoro\\amzn-kind-downlaoder\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
       "packagesPath": "C:\\Users\\Alessandro\\.nuget\\packages\\",
-      "outputPath": "D:\\Lavoro\\fck-amzn\\amzn-kind-downloader\\amzn-kind-downloader\\obj\\",
+      "outputPath": "D:\\Lavoro\\amzn-kind-downlaoder\\amzn-kind-downloader\\amzn-kind-downloader\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages",
