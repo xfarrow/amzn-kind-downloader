@@ -55,9 +55,16 @@ namespace amzn_kind_downloader
             driver.Manage().Cookies.DeleteAllCookies();
 
             List<Cookie> cookies = CookiesFromJson(cookiespath);
+
             foreach (Cookie cookie in cookies)
             {
-                driver.Manage().Cookies.AddCookie(cookie);
+                try
+                {
+                    driver.Manage().Cookies.AddCookie(cookie);
+                }catch(Exception exc)
+                {
+                    Console.WriteLine("Add of the cookie " + cookie.Name + " failed: " + exc.Message);
+                }
             }
 
             driver.Navigate().GoToUrl(booklink);
@@ -152,7 +159,7 @@ namespace amzn_kind_downloader
             // somehow amz does not show the right button unless you stroke the left button first...
             driver.FindElement(By.TagName("html")).SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
             Thread.Sleep(7000);
-            driver.FindElement(By.XPath("html")).SendKeys(OpenQA.Selenium.Keys.ArrowRight);
+            driver.FindElement(By.TagName("html")).SendKeys(OpenQA.Selenium.Keys.ArrowRight);
 
             int pagecounter = 1;
             Screenshot screenshot;
@@ -161,8 +168,15 @@ namespace amzn_kind_downloader
             while (IsElementPresent(driver, By.XPath("//div[@class='chevron-container right']")))
             {
                 screenshot = driver.GetScreenshot();
-                screenshot.SaveAsFile(Path.Combine(savein, pagecounter++.ToString() + ".png"), ScreenshotImageFormat.Jpeg);
-
+                try
+                {
+                    screenshot.SaveAsFile(Path.Combine(savein, pagecounter++.ToString() + ".png"), ScreenshotImageFormat.Png);
+                }catch(IOException ioexc)
+                {
+                    driver.Quit();
+                    MessageBox.Show("Unable to save the screenshot, operation aborted. Details: " + ioexc.Message, "Operation aborted", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
                 // next page
                 driver.FindElement(By.XPath("//div[@class='chevron-container right']")).Click();
                 Thread.Sleep(2000);

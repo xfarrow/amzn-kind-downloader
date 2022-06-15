@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "153e2180-896e-4172-a5e1-ce0cc81ae186": {
+      "ProjectGuid": "153e2180-896e-4172-a5e1-ce0cc81ae186",
+      "DisplayName": "amzn-kind-downloader",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
