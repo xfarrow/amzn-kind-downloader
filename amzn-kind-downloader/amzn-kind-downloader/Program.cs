@@ -251,20 +251,10 @@ namespace amzn_kind_downloader
             while (File.Exists(Path.Combine(savein, pagecounter.ToString() + ".png")))
             {
                 builder.InsertImage(Path.Combine(savein, pagecounter.ToString() + ".png"));
-                pagecounter++;
-            }
-            doc.Save(Path.Combine(savein, title + ".pdf"));
-
-
-            pagecounter = 1;
-
-            while (File.Exists(Path.Combine(savein, pagecounter.ToString() + ".png")))
-            {
                 File.Delete(Path.Combine(savein, pagecounter.ToString() + ".png"));
                 pagecounter++;
             }
-
-
+            doc.Save(Path.Combine(savein, title + ".pdf"));
         }
 
     }
