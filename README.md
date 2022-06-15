@@ -3,7 +3,7 @@ When you buy a book, may also it be digital, you should have all the rights to p
 
 
 ## How it works
-It takes automatic screenshots of the book and merges them into a single PDF file. In the future I'd like to use an OCR library not to lose quality during the process.
+It takes automatic screenshots of the book and merges them into a single PDF file. Don't worry, you can minimize the window while the program does what it has to do.
 
 It seems very difficult to directly retrieve text from the website; it's not HTML nor JS generated. 
 
