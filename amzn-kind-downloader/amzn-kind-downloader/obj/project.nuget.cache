@@ -1,10 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "vh+p91pbqdEYF2PsOCpXrli9kELjBXH3Zon5PIdVK237mRncDmxEV4E+jhu2+HHBB0Brk+6IpMX0dvHGjwgRDQ==",
+  "dgSpecHash": "yfuzvxnU7tHeD662YeLqRBy//qOrrv6ZXlLV/S97QviUmQFNWCvba+5y6JMdpdbJJntGXcAf/UmCtrhnLeOnFg==",
   "success": true,
   "projectFilePath": "D:\\Lavoro\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\utente\\.nuget\\packages\\aspose.words\\22.6.0\\aspose.words.22.6.0.nupkg.sha512",
+    "C:\\Users\\utente\\.nuget\\packages\\dotnetseleniumextras.waithelpers\\3.11.0\\dotnetseleniumextras.waithelpers.3.11.0.nupkg.sha512",
     "C:\\Users\\utente\\.nuget\\packages\\microsoft.dotnet.platformabstractions\\2.0.4\\microsoft.dotnet.platformabstractions.2.0.4.nupkg.sha512",
     "C:\\Users\\utente\\.nuget\\packages\\microsoft.extensions.dependencymodel\\2.0.4\\microsoft.extensions.dependencymodel.2.0.4.nupkg.sha512",
     "C:\\Users\\utente\\.nuget\\packages\\microsoft.extensions.platformabstractions\\1.1.0\\microsoft.extensions.platformabstractions.1.1.0.nupkg.sha512",
@@ -31,6 +32,7 @@
     "C:\\Users\\utente\\.nuget\\packages\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.14.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\utente\\.nuget\\packages\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.04-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
     "C:\\Users\\utente\\.nuget\\packages\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl\\4.3.0\\runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.0.nupkg.sha512",
+    "C:\\Users\\utente\\.nuget\\packages\\selenium.support\\4.2.0\\selenium.support.4.2.0.nupkg.sha512",
     "C:\\Users\\utente\\.nuget\\packages\\selenium.webdriver\\4.2.0\\selenium.webdriver.4.2.0.nupkg.sha512",
     "C:\\Users\\utente\\.nuget\\packages\\selenium.webdriver.geckodriver\\0.31.0.1\\selenium.webdriver.geckodriver.0.31.0.1.nupkg.sha512",
     "C:\\Users\\utente\\.nuget\\packages\\skiasharp\\2.80.1\\skiasharp.2.80.1.nupkg.sha512",

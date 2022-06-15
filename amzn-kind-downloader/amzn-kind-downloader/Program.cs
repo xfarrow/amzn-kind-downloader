@@ -3,6 +3,8 @@ using OpenQA.Selenium;
 using Newtonsoft.Json.Linq;
 using Newtonsoft.Json;
 using Aspose.Words;
+using OpenQA.Selenium.Support.UI;
+using SeleniumExtras.WaitHelpers;
 
 namespace amzn_kind_downloader
 {
@@ -61,16 +63,14 @@ namespace amzn_kind_downloader
                 try
                 {
                     driver.Manage().Cookies.AddCookie(cookie);
-                }catch(Exception exc)
+                }
+                catch (Exception exc)
                 {
                     Console.WriteLine("Add of the cookie " + cookie.Name + " failed: " + exc.Message);
                 }
             }
 
             driver.Navigate().GoToUrl(booklink);
-
-            // wait until page is loaded; TODO: generalize
-            Thread.Sleep(10000);
 
             TurnBookPages(driver, savein);
 
@@ -150,20 +150,34 @@ namespace amzn_kind_downloader
             if (driver is null)
                 return;
 
+            WebDriverWait wait = new(driver, TimeSpan.FromSeconds(15));
+
             driver.Manage().Window.Maximize();
-            Thread.Sleep(10000);
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class='kg-loader']")));
+            Thread.Sleep(10000); // users chooses page to start from here (MAX 10 sec)
+
 
             // remove cookie policy banner
+            try
+            {
+                wait.Until(ExpectedConditions.ElementIsVisible(By.Id("ion-overlay-1")));
+            }
+            catch (WebDriverTimeoutException) { }
             driver.ExecuteScript("document.getElementById('ion-overlay-1').remove();");
+
+            // wait until loader is not present
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class='kg-loader']")));
 
             // somehow amz does not show the right button unless you stroke the left button first...
             driver.FindElement(By.TagName("html")).SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
-            Thread.Sleep(7000);
+            // wait until loader is not present
+            wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class='kg-loader']")));
             driver.FindElement(By.TagName("html")).SendKeys(OpenQA.Selenium.Keys.ArrowRight);
 
             int pagecounter = 1;
             Screenshot screenshot;
 
+            wait.Until(ExpectedConditions.ElementIsVisible(By.XPath("//div[@class='chevron-container right']")));
 
             while (IsElementPresent(driver, By.XPath("//div[@class='chevron-container right']")))
             {
@@ -171,15 +185,18 @@ namespace amzn_kind_downloader
                 try
                 {
                     screenshot.SaveAsFile(Path.Combine(savein, pagecounter++.ToString() + ".png"), ScreenshotImageFormat.Png);
-                }catch(IOException ioexc)
+                }
+                catch (IOException ioexc)
                 {
                     driver.Quit();
                     MessageBox.Show("Unable to save the screenshot, operation aborted. Details: " + ioexc.Message, "Operation aborted", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
+                // wait until loader is not present
+                wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class='kg-loader']")));
+
                 // next page
                 driver.FindElement(By.XPath("//div[@class='chevron-container right']")).Click();
-                Thread.Sleep(2000);
             }
         }
 
@@ -200,6 +217,9 @@ namespace amzn_kind_downloader
 
         private static string FindBookTitle(FirefoxDriver? driver)
         {
+            if (driver is null)
+                return string.Empty;
+
             if (IsElementPresent(driver, By.XPath("//div[contains(@class, 'fixed-book-title')]")))
             {
                 return driver.FindElement(By.XPath("//div[contains(@class, 'fixed-book-title')]")).Text;
@@ -223,6 +243,7 @@ namespace amzn_kind_downloader
             var imageSizeController = new Bitmap(Path.Combine(savein, pagecounter + ".png"));
             int pdfheight = imageSizeController.Height;
             int pdfwidth = imageSizeController.Width;
+            imageSizeController.Dispose();
 
             builder.PageSetup.PageWidth = pdfwidth;
             builder.PageSetup.PageHeight = pdfheight;
@@ -230,11 +251,20 @@ namespace amzn_kind_downloader
             while (File.Exists(Path.Combine(savein, pagecounter.ToString() + ".png")))
             {
                 builder.InsertImage(Path.Combine(savein, pagecounter.ToString() + ".png"));
+                pagecounter++;
+            }
+            doc.Save(Path.Combine(savein, title + ".pdf"));
+
+
+            pagecounter = 1;
+
+            while (File.Exists(Path.Combine(savein, pagecounter.ToString() + ".png")))
+            {
                 File.Delete(Path.Combine(savein, pagecounter.ToString() + ".png"));
                 pagecounter++;
             }
 
-            doc.Save(Path.Combine(savein, title + ".pdf"));
+
         }
 
     }

@@ -52,9 +52,17 @@
               "target": "Package",
               "version": "[22.6.0, )"
             },
+            "DotNetSeleniumExtras.WaitHelpers": {
+              "target": "Package",
+              "version": "[3.11.0, )"
+            },
             "Nancy": {
               "target": "Package",
               "version": "[2.0.0, )"
+            },
+            "Selenium.Support": {
+              "target": "Package",
+              "version": "[4.2.0, )"
             },
             "Selenium.WebDriver": {
               "target": "Package",
