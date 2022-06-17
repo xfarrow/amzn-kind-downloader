@@ -162,3 +162,5 @@ D:\Lavoro\amzn-kind-downloader\amzn-kind-downloader\amzn-kind-downloader\obj\Deb
 D:\Lavoro\amzn-kind-downloader\amzn-kind-downloader\amzn-kind-downloader\obj\Debug\net6.0-windows\ref\amzn-kind-downloader.dll
 D:\Lavoro\amzn-kind-downloader\amzn-kind-downloader\amzn-kind-downloader\obj\Debug\net6.0-windows\amzn-kind-downloader.pdb
 D:\Lavoro\amzn-kind-downloader\amzn-kind-downloader\amzn-kind-downloader\obj\Debug\net6.0-windows\amzn-kind-downloader.genruntimeconfig.cache
+D:\Lavoro\amzn-kind-downlaoder\amzn-kind-downloader\amzn-kind-downloader\bin\Debug\net6.0-windows\SeleniumExtras.WaitHelpers.dll
+D:\Lavoro\amzn-kind-downlaoder\amzn-kind-downloader\amzn-kind-downloader\bin\Debug\net6.0-windows\WebDriver.Support.dll

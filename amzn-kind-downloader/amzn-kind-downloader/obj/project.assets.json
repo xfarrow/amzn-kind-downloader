@@ -6029,25 +6029,25 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\utente\\.nuget\\packages\\": {},
+    "C:\\Users\\Alessandro\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages": {},
     "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Lavoro\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
+      "projectUniqueName": "D:\\Lavoro\\amzn-kind-downlaoder\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
       "projectName": "amzn-kind-downloader",
-      "projectPath": "D:\\Lavoro\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
-      "packagesPath": "C:\\Users\\utente\\.nuget\\packages\\",
-      "outputPath": "D:\\Lavoro\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader\\obj\\",
+      "projectPath": "D:\\Lavoro\\amzn-kind-downlaoder\\amzn-kind-downloader\\amzn-kind-downloader\\amzn-kind-downloader.csproj",
+      "packagesPath": "C:\\Users\\Alessandro\\.nuget\\packages\\",
+      "outputPath": "D:\\Lavoro\\amzn-kind-downlaoder\\amzn-kind-downloader\\amzn-kind-downloader\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\DevExpress 21.1\\Components\\Offline Packages",
         "C:\\Program Files (x86)\\DevExpress 21.2\\Components\\Offline Packages"
       ],
       "configFilePaths": [
-        "C:\\Users\\utente\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alessandro\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.1.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\DevExpress 21.2.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
@@ -6120,7 +6120,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.300\\RuntimeIdentifierGraph.json"
       }
     }
   }
