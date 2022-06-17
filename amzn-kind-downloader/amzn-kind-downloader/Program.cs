@@ -156,7 +156,6 @@ namespace amzn_kind_downloader
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class='kg-loader']")));
             Thread.Sleep(10000); // users chooses page to start from here (MAX 10 sec)
 
-
             // remove cookie policy banner
             try
             {
@@ -168,7 +167,7 @@ namespace amzn_kind_downloader
             // wait until loader is not present
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class='kg-loader']")));
 
-            // somehow amz does not show the right button unless you stroke the left button first...
+            // somehow amz does not allow to turn the next page unless you go to the previous page first...
             driver.FindElement(By.TagName("html")).SendKeys(OpenQA.Selenium.Keys.ArrowLeft);
             // wait until loader is not present
             wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class='kg-loader']")));
@@ -181,6 +180,12 @@ namespace amzn_kind_downloader
 
             while (IsElementPresent(driver, By.XPath("//div[@class='chevron-container right']")))
             {
+                // The "Last read page" popup might be present. We need to get rid of it in order to get a proper screenshot
+                if (IsElementPresent(driver, By.XPath("//div[contains(@class, 'alert-wrapper')]")))
+                {
+                    driver.FindElement(By.XPath("//button[contains(@class, 'alert-button ion-focusable ion-activatable')]")).Click();
+                }
+
                 screenshot = driver.GetScreenshot();
                 try
                 {
@@ -192,12 +197,15 @@ namespace amzn_kind_downloader
                     MessageBox.Show("Unable to save the screenshot, operation aborted. Details: " + ioexc.Message, "Operation aborted", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                // wait until loader is not present
+
+                // wait until loader (spinning circle) is not present
                 wait.Until(ExpectedConditions.InvisibilityOfElementLocated(By.XPath("//div[@class='kg-loader']")));
 
                 // next page
+                wait.Until(ExpectedConditions.ElementToBeClickable(By.XPath("//div[@class='chevron-container right']")));
                 driver.FindElement(By.XPath("//div[@class='chevron-container right']")).Click();
             }
+            driver.ExecuteAsyncScript("alert('We are elaborating your PDF. This window will close automatically :-)');");
         }
 
         private static bool IsElementPresent(FirefoxDriver? driver, By by)
@@ -251,10 +259,18 @@ namespace amzn_kind_downloader
             while (File.Exists(Path.Combine(savein, pagecounter.ToString() + ".png")))
             {
                 builder.InsertImage(Path.Combine(savein, pagecounter.ToString() + ".png"));
-                File.Delete(Path.Combine(savein, pagecounter.ToString() + ".png"));
                 pagecounter++;
             }
             doc.Save(Path.Combine(savein, title + ".pdf"));
+
+            pagecounter = 1;
+            while (File.Exists(Path.Combine(savein, pagecounter.ToString() + ".png")))
+            {
+                File.Delete(Path.Combine(savein, pagecounter.ToString() + ".png"));
+                pagecounter++;
+            }
+
+
         }
 
     }
