@@ -1,6 +1,8 @@
 # amzn-kind(le)-downloader
 When you buy a book, may also it be digital, you should have all the rights to personally own that book. This software helps you download purchased books from big A (www.read.****.com)
 
+<noscript><a href="https://liberapay.com/xfarrow/donate"><img alt="Donate using Liberapay" src="https://liberapay.com/assets/widgets/donate.svg"></a></noscript>
+
 
 ## How it works
 It takes automatic screenshots of the book and merges them into a single PDF file. Don't worry, you can minimize the window while the program does what it has to do.
