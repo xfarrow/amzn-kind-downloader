@@ -7,14 +7,14 @@ When you buy a book, may also it be digital, you should have all the rights to p
 ## How it works
 It takes automatic screenshots of the book and merges them into a single PDF file. Don't worry, you can minimize the window while the program does what it has to do.
 
-It seems very difficult to directly retrieve text from the website; it's not HTML nor JS generated. 
+It seems very difficult to directly retrieve text from the website; it's DRM-protected.
 
 ## Tutorial
-[Video Tutorial](https://www.youtube.com/watch?v=LH4JFvwnJbk) (taken down by bigA for copyright violation)
+[Video Tutorial](https://www.youtube.com/watch?v=LH4JFvwnJbk)
 1. It is needed to have a cookie editor, <a href="https://addons.mozilla.org/it/firefox/addon/cookie-editor/">this</a> is the one I tried
 2. Go to the URL where you can read the book (something like https://read.******.com/?asin=xxxx)
 3. Export the cookies in the JSON format and give them to amzn-kind-downloader
-4. Paste the link of the book in amzn-kind-downloader
+4. In amzn-kind-downloader provide the book's link, the cookies and the page in which the PDF will be saved
 5. Enjoy
 ## Note
 This software is provided as is and neither the author (or authors) nor GitHub, Inc. are responsable or encourage misconduct, copyright violations and piracy.
