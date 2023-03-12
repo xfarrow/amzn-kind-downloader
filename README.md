@@ -10,7 +10,6 @@ It takes automatic screenshots of the book and merges them into a single PDF fil
 It seems very difficult to directly retrieve text from the website; it's DRM-protected.
 
 ## Tutorial
-[Video Tutorial](https://www.youtube.com/watch?v=LH4JFvwnJbk)
 1. It is needed to have a cookie editor, <a href="https://addons.mozilla.org/it/firefox/addon/cookie-editor/">this</a> is the one I tried
 2. Go to the URL where you can read the book (something like https://read.******.com/?asin=xxxx)
 3. Export the cookies in the JSON format and give them to amzn-kind-downloader
